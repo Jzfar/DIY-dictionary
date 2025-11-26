@@ -1,0 +1,37 @@
+# 后端初始化 __init__.py 文件
+
+## 创建这些文件以完成后端项目结构：
+
+### backend/app/__init__.py
+"""DIY Dictionary Backend Package"""
+__version__ = "0.1.0"
+
+### backend/app/api/__init__.py
+"""API Package"""
+
+### backend/app/api/v1/__init__.py
+"""API v1 Package"""
+
+### backend/app/api/v1/endpoints/__init__.py
+"""Endpoints Package"""
+
+### backend/app/models/__init__.py
+"""Database Models Package"""
+
+### backend/app/schemas/__init__.py
+"""Pydantic Schemas Package"""
+
+### backend/app/services/__init__.py
+"""Services Package"""
+
+### backend/app/db/__init__.py
+"""Database Package"""
+
+### backend/app/core/__init__.py
+"""Core Package"""
+
+### backend/app/utils/__init__.py
+"""Utilities Package"""
+
+### backend/tests/__init__.py
+"""Tests Package"""

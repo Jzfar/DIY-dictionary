@@ -1,0 +1,173 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 标题 -->
+  <text x="400" y="25" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">
+    MVP 功能实现流程
+  </text>
+
+  <!-- 阶段容器样式 -->
+  <defs>
+    <style>
+      .phase-box { fill: #FFFFFF; stroke-width: 2; rx: 8; }
+      .phase-header { font-size: 13; font-weight: bold; }
+      .phase-content { font-size: 11; }
+      .phase-1 { stroke: #4CAF50; }
+      .phase-2 { stroke: #FFC107; }
+      .phase-3 { stroke: #2196F3; }
+      .phase-4 { stroke: #9C27B0; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Phase 1: MVP 核心功能 -->
+  <rect class="phase-box phase-1" x="30" y="50" width="170" height="160"/>
+  <text x="115" y="70" text-anchor="middle" class="phase-header" fill="#2E7D32">
+    Phase 1: MVP核心
+  </text>
+  <text x="40" y="90" class="phase-content" fill="#424242">□ 翻译API</text>
+  <text x="40" y="110" class="phase-content" fill="#424242">□ 语法解释API</text>
+  <text x="40" y="130" class="phase-content" fill="#424242">□ 词汇学习API</text>
+  <text x="40" y="150" class="phase-content" fill="#424242">□ 前端基础UI</text>
+  <text x="40" y="170" class="phase-content" fill="#2E7D32" font-weight="bold">⏱️ 2-3周</text>
+
+  <!-- 箭头 Phase 1 -> 2 -->
+  <path d="M 200 130 L 260 130" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Phase 2: 功能完善 -->
+  <rect class="phase-box phase-2" x="260" y="50" width="170" height="160"/>
+  <text x="345" y="70" text-anchor="middle" class="phase-header" fill="#F57F17">
+    Phase 2: 完善
+  </text>
+  <text x="270" y="90" class="phase-content" fill="#424242">□ 文本选择高亮</text>
+  <text x="270" y="110" class="phase-content" fill="#424242">□ UI/UX 优化</text>
+  <text x="270" y="130" class="phase-content" fill="#424242">□ 错误处理</text>
+  <text x="270" y="150" class="phase-content" fill="#424242">□ 单元测试</text>
+  <text x="270" y="170" class="phase-content" fill="#F57F17" font-weight="bold">⏱️ 1-2周</text>
+
+  <!-- 箭头 Phase 2 -> 3 -->
+  <path d="M 430 130 L 490 130" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Phase 3: 生产准备 -->
+  <rect class="phase-box phase-3" x="490" y="50" width="170" height="160"/>
+  <text x="575" y="70" text-anchor="middle" class="phase-header" fill="#1565C0">
+    Phase 3: 生产
+  </text>
+  <text x="500" y="90" class="phase-content" fill="#424242">□ JWT认证</text>
+  <text x="500" y="110" class="phase-content" fill="#424242">□ 学习历史</text>
+  <text x="500" y="130" class="phase-content" fill="#424242">□ 缓存(Redis)</text>
+  <text x="500" y="150" class="phase-content" fill="#424242">□ Docker化</text>
+  <text x="500" y="170" class="phase-content" fill="#1565C0" font-weight="bold">⏱️ 2-3周</text>
+
+  <!-- 箭头 Phase 3 -> 4 -->
+  <path d="M 660 130 L 720 130" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Phase 4: 扩展 -->
+  <rect class="phase-box phase-4" x="720" y="50" width="50" height="160"/>
+  <text x="745" y="120" text-anchor="middle" class="phase-header" fill="#6A1B9A" font-size="10">
+    Phase 4
+  </text>
+
+  <!-- ==================== 详细的数据流 ==================== -->
+
+  <!-- 翻译流程 -->
+  <rect x="30" y="250" width="240" height="140" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2" rx="6"/>
+  <text x="150" y="270" text-anchor="middle" font-size="12" font-weight="bold" fill="#2E7D32">
+    翻译流程 (Translate API)
+  </text>
+
+  <text x="40" y="295" font-size="10" fill="#424242">1. 用户输入英文句子</text>
+  <path d="M 55 305 L 70 305" stroke="#4CAF50" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="75" y="305" font-size="10" fill="#424242">2. 发送到后端 API</text>
+  <path d="M 160 315 L 160 325" stroke="#4CAF50" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="40" y="335" font-size="10" fill="#424242">3. LLM Service 调用 Claude API</text>
+  <path d="M 220 345 L 235 345" stroke="#4CAF50" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="240" y="345" font-size="10" fill="#424242">4. 返回中文翻译</text>
+  <path d="M 150 355 L 150 365" stroke="#4CAF50" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="40" y="375" font-size="10" fill="#424242">5. 前端显示结果</text>
+
+  <!-- 语法解释流程 -->
+  <rect x="290" y="250" width="240" height="140" fill="#FFF3E0" stroke="#FFC107" stroke-width="2" rx="6"/>
+  <text x="410" y="270" text-anchor="middle" font-size="12" font-weight="bold" fill="#F57F17">
+    语法解释流程 (Grammar API)
+  </text>
+
+  <text x="300" y="295" font-size="10" fill="#424242">1. 用户选中或输入句子部分</text>
+  <path d="M 385 305 L 400 305" stroke="#FFC107" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="405" y="305" font-size="10" fill="#424242">2. 发送到后端</text>
+  <path d="M 410 315 L 410 325" stroke="#FFC107" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="300" y="335" font-size="10" fill="#424242">3. LLM 分析语法结构</text>
+  <path d="M 430 345 L 445 345" stroke="#FFC107" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="450" y="345" font-size="10" fill="#424242">4. 返回详细解释</text>
+  <path d="M 360 355 L 360 365" stroke="#FFC107" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="300" y="375" font-size="10" fill="#424242">5. 前端展示语法注解</text>
+
+  <!-- 词汇学习流程 -->
+  <rect x="550" y="250" width="240" height="140" fill="#E3F2FD" stroke="#2196F3" stroke-width="2" rx="6"/>
+  <text x="670" y="270" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565C0">
+    词汇学习流程 (Vocabulary API)
+  </text>
+
+  <text x="560" y="295" font-size="10" fill="#424242">1. 用户选中单词</text>
+  <path d="M 610 305 L 625 305" stroke="#2196F3" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="630" y="305" font-size="10" fill="#424242">2. 指定学习类型</text>
+  <path d="M 670 315 L 670 325" stroke="#2196F3" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="560" y="335" font-size="10" fill="#424242">3. LLM 根据类型生成解释</text>
+  <path d="M 690 345 L 705 345" stroke="#2196F3" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="710" y="345" font-size="10" fill="#424242">4. 返回解释</text>
+  <path d="M 620 355 L 620 365" stroke="#2196F3" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="560" y="375" font-size="10" fill="#424242">5. 前端展示词汇信息</text>
+
+  <!-- ==================== 技术选择说明 ==================== -->
+  <rect x="30" y="420" width="760" height="160" fill="#FAFAFA" stroke="#999" stroke-width="1" rx="6"/>
+  <text x="400" y="440" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">
+    关键技术决策
+  </text>
+
+  <!-- 技术卡片 -->
+  <g>
+    <!-- 后端 -->
+    <rect x="40" y="455" width="160" height="115" fill="#FFFFFF" stroke="#1976D2" stroke-width="1" rx="4"/>
+    <text x="120" y="475" text-anchor="middle" font-size="11" font-weight="bold" fill="#1976D2">后端</text>
+    <text x="50" y="495" font-size="9" fill="#424242">✓ FastAPI</text>
+    <text x="50" y="510" font-size="9" fill="#424242">✓ SQLAlchemy</text>
+    <text x="50" y="525" font-size="9" fill="#424242">✓ Async/Await</text>
+    <text x="50" y="540" font-size="9" fill="#424242">✓ SQLite (本地)</text>
+
+    <!-- 前端 -->
+    <rect x="220" y="455" width="160" height="115" fill="#FFFFFF" stroke="#4CAF50" stroke-width="1" rx="4"/>
+    <text x="300" y="475" text-anchor="middle" font-size="11" font-weight="bold" fill="#4CAF50">前端</text>
+    <text x="230" y="495" font-size="9" fill="#424242">✓ Vue 3</text>
+    <text x="230" y="510" font-size="9" fill="#424242">✓ TypeScript</text>
+    <text x="230" y="525" font-size="9" fill="#424242">✓ Vite</text>
+    <text x="230" y="540" font-size="9" fill="#424242">✓ Pinia</text>
+
+    <!-- LLM -->
+    <rect x="400" y="455" width="160" height="115" fill="#FFFFFF" stroke="#7B1FA2" stroke-width="1" rx="4"/>
+    <text x="480" y="475" text-anchor="middle" font-size="11" font-weight="bold" fill="#7B1FA2">LLM</text>
+    <text x="410" y="495" font-size="9" fill="#424242">✓ Claude</text>
+    <text x="410" y="510" font-size="9" fill="#424242">✓ OpenAI</text>
+    <text x="410" y="525" font-size="9" fill="#424242">✓ Gemini</text>
+    <text x="410" y="540" font-size="9" fill="#424242">✓ 可配置切换</text>
+
+    <!-- 部署 -->
+    <rect x="580" y="455" width="160" height="115" fill="#FFFFFF" stroke="#F57C00" stroke-width="1" rx="4"/>
+    <text x="660" y="475" text-anchor="middle" font-size="11" font-weight="bold" fill="#F57C00">部署</text>
+    <text x="590" y="495" font-size="9" fill="#424242">✓ Docker</text>
+    <text x="590" y="510" font-size="9" fill="#424242">✓ PostgreSQL</text>
+    <text x="590" y="525" font-size="9" fill="#424242">✓ Nginx</text>
+    <text x="590" y="540" font-size="9" fill="#424242">✓ 云部署就绪</text>
+  </g>
+</svg>
